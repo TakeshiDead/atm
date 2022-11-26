@@ -4,20 +4,31 @@ public class atm
     public static void main(String args[] )
     { 
         int balance = 5000, withdraw, deposit;
-        int password = 123456;
+        int pin = 1234;
        
-        Scanner x = new Scanner(System.in);
-        if(x!=password)
-        {
-            System.out.println("try again");
-        }
-        else{
-            System.out.println("Thank you !");
-        }
+       
          Scanner s = new Scanner(System.in);
-        while(true)
+        while(true){ 
+
+            System.out.println("Please enter your 4 digit pin");
+          int answer = s.nextInt();
+
+         if (answer != pin ){ System.out.println("Invalid pin");
+
+         }
+        
+         else if (answer == pin) {
+             System.out.println("Thank you !");
+             // leave the first loop
+             
+             
+         }
+        System.out.println("");
+
+         
+     
+        while(answer==pin)
         {
-            System.out.println("Enter your password");
             System.out.println("Automated Teller Machine");
             System.out.println("push1 for Withdraw");
             System.out.println("push 2 for Deposit");
@@ -46,7 +57,7 @@ public class atm
                 System.out.print("Enter money to be deposited:");
                 deposit = s.nextInt();
                 balance = balance + deposit;
-                System.out.println("Your Money has been successfully depsited");
+                System.out.println("Your Money has been successfully deposited");
                 System.out.println("");
                 break;
  
@@ -57,6 +68,7 @@ public class atm
  
                 case 4:
                 System.exit(0);
+              }
             }
         }
     }
