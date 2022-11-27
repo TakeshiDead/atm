@@ -1,19 +1,19 @@
 P á g i n a | 1
 
-
 #Realizar un Cajero automático (ATM). 
 
 Que realice las siguientes funciones:
 
- Solicitar clave de acceso.
- Si la clave es correcta presentar el siguiente menú de
-  opciones:
+     Solicitar clave de acceso.
 
-     Consulta de Balance.
-     Depósitos*
-     Retiros*
-     Transferencias*
-     Salir del sistema* 
+     Si la clave es correcta presentar el siguiente menú de
+        opciones:
+
+         Consulta de Balance.
+         Depósitos.
+         Retiros.
+         Transferencias.
+         Salir del sistema. 
 
 Tener cuatro (4) clases:
 

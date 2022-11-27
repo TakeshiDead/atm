@@ -34,10 +34,8 @@ public class Main {
             default:
                 System.out.print("vamo a ve");
         }
-
         if(continuar){
             main(arg);
         }
-
     }
 }

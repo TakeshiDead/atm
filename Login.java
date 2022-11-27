@@ -1,5 +1,4 @@
 public class Login {
-
     public Account validatePin(int pin){
 
         for (Account cuenta : Main.cuentas) {

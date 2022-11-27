@@ -1,4 +1,3 @@
-import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -110,19 +109,24 @@ public class Vistas {
 
         switch (option){
             case 1:
-                viewBalance();
+                ViewBalance();
                 break;
             case 2:
+                ViewDeposit();
+                break;
             case 3:
+                ViewTransfer();
+                break;
             case 4:
+                ViewWithdraw();
+                break;
             case 5:
                 break;
         }
-
     }
-    public void viewBalance(){
+    public void ViewBalance(){
         System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the BEST ATM    ////*************\n");
-        System.out.println("     ***Bienvenido "+nombre+", esta es su cuenta.***\n");
+        System.out.println("     ***Bienvenido "+cuenta.getName()+", esta es su cuenta.***\n");
         System.out.println("                 Recuerda tu PIN:  ("+pin+").");
         System.out.print("---------------------------------------------------------------\n");
         System.out.println("|                                                             |");
@@ -190,12 +194,18 @@ public class Vistas {
         System.out.println("|                                                             |");
         System.out.println("|   Su saldo es: DOP $"+balance+"."+"                         |");
         System.out.println("|                                                             |");
-        System.out.println("|   ¿Cuanto desea retirar?                                  |");
+        System.out.println("|   Nombre y cantidad a transferir                            |");
         System.out.println("|                                                             |");
         System.out.println("---------------------------------------------------------------\n");
         System.out.print("Digite el nombre: ");
 
         account = sc.nextLine();
-    }
 
+        System.out.print("Cantidad de la transferencia: DOP $ ");
+        int transfer = sc.nextInt();
+
+        System.out.print("Transferencia exitosa. Usted ha transferido: $"+transfer+" DOP.  A:"+NOMBRE DE AQUIEN LO MANDO+".");
+
+        System.out.print("No puede transferir mas dinero del que posee en su cuenta.");
+    }
 }
