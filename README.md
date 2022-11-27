@@ -1,6 +1,6 @@
 ****P á g i n a | 1****
 
-#Realizar un Cajero automático (ATM). 
+# Realizar un Cajero automático (ATM). 
 
 Que realice las siguientes funciones:
 
