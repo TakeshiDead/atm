@@ -1,3 +1,4 @@
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -120,6 +121,81 @@ public class Vistas {
 
     }
     public void viewBalance(){
+        System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the BEST ATM    ////*************\n");
+        System.out.println("     ***Bienvenido "+nombre+", esta es su cuenta.***\n");
+        System.out.println("                 Recuerda tu PIN:  ("+pin+").");
+        System.out.print("---------------------------------------------------------------\n");
+        System.out.println("|                                                             |");
+        System.out.println("|   Su saldo es: DOP $"+balance+"."+"                         |");
+        System.out.println("|                                                             |");
+        System.out.println("|   1) Retiro.                  2) Depósitos.                 |");
+        System.out.println("|                                                             |");
+        System.out.println("|   3) Transferencias.          4) EXIT.                      |");
+        System.out.print("---------------------------------------------------------------\n");
+        System.out.println("                                                             ");
+        System.out.print("¿Cúal es tu opción? ");
 
+        int option = sc.nextInt();
+
+        switch (option){
+            case 1:
+                ViewWithdraw();
+            case 2:
+                ViewDeposit();
+                break;
+            case 3:
+                ViewTransfer();
+                break;
+            case 4:
+                break;
+        }
     }
+    public void ViewDeposit(){
+        System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the BEST ATM    ////*************\n");
+        System.out.println("     ***Bienvenido "+nombre+", esta es su cuenta.***\n");
+        System.out.println("                 Recuerda tu PIN:  ("+pin+").");
+        System.out.print("---------------------------------------------------------------\n");
+        System.out.println("|                                                             |");
+        System.out.println("|   Su saldo es: DOP $"+balance+"."+"                         |");
+        System.out.println("|                                                             |");
+        System.out.println("|   ¿Cuanto desea depositar?                                  |");
+        System.out.println("|                                                             |");
+        System.out.println("---------------------------------------------------------------\n");
+        System.out.print("Deposito de: $");
+
+        int deposioto = sc.nextInt();
+    }
+
+    public void ViewWithdraw(){
+        System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the BEST ATM    ////*************\n");
+        System.out.println("     ***Bienvenido "+nombre+", esta es su cuenta.***\n");
+        System.out.println("                 Recuerda tu PIN:  ("+pin+").");
+        System.out.print("---------------------------------------------------------------\n");
+        System.out.println("|                                                             |");
+        System.out.println("|   Su saldo es: DOP $"+balance+"."+"                         |");
+        System.out.println("|                                                             |");
+        System.out.println("|   ¿Cuanto desea retirar?                                  |");
+        System.out.println("|                                                             |");
+        System.out.println("---------------------------------------------------------------\n");
+        System.out.print("Retiro de: $");
+
+        int retiro = sc.nextInt();
+    }
+
+    public void ViewTransfer(){
+        System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the BEST ATM    ////*************\n");
+        System.out.println("     ***Bienvenido "+nombre+", esta es su cuenta.***\n");
+        System.out.println("                 Recuerda tu PIN:  ("+pin+").");
+        System.out.print("---------------------------------------------------------------\n");
+        System.out.println("|                                                             |");
+        System.out.println("|   Su saldo es: DOP $"+balance+"."+"                         |");
+        System.out.println("|                                                             |");
+        System.out.println("|   ¿Cuanto desea retirar?                                  |");
+        System.out.println("|                                                             |");
+        System.out.println("---------------------------------------------------------------\n");
+        System.out.print("Digite el nombre: ");
+
+        account = sc.nextLine();
+    }
+
 }
