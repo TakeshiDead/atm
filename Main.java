@@ -29,7 +29,7 @@ public class Main {
                 vs.viewLogin();
                 break;
             case 2:
-                vs.viewRegister();
+                vs.ViewRegister();
                 break;
             default:
                 System.out.print("vamo a ve");

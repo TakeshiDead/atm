@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -23,14 +21,13 @@ public class Vistas {
         Account cuenta = login.validatePin(pin);
 
         if(Objects.nonNull(cuenta)){
-            viewAccount(cuenta);
+            ViewAccount(cuenta);
         }else{
             System.out.println("Pin incorrecto.");
             viewLogin();
         }
     }
-
-    public void viewRegister(){
+    public void ViewRegister(){
         int pin;
         String nombre ;
         float cantidad;
@@ -83,14 +80,13 @@ public class Vistas {
 
         switch (option){
             case 1:
-                viewAccount(account);
+                ViewAccount(account);
                 break;
             case 2:
                 break;
         }
     }
-
-    public void viewAccount(Account cuenta){
+    public void ViewAccount(Account cuenta){
         System.out.println("\n\n\n\n*************\\\\\\\\    BEST ATM    ////*************\n");
         System.out.println("            *** Bienvenido, "+cuenta.getName()+"! ***\n");
         System.out.println("           *** Selecciona una opcion ***\n");
@@ -169,7 +165,6 @@ public class Vistas {
 
         int deposioto = sc.nextInt();
     }
-
     public void ViewWithdraw(){
         System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the BEST ATM    ////*************\n");
         System.out.println("     ***Bienvenido "+nombre+", esta es su cuenta.***\n");
@@ -185,7 +180,6 @@ public class Vistas {
 
         int retiro = sc.nextInt();
     }
-
     public void ViewTransfer(){
         System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the BEST ATM    ////*************\n");
         System.out.println("     ***Bienvenido "+nombre+", esta es su cuenta.***\n");

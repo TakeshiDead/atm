@@ -17,35 +17,23 @@ Que realice las siguientes funciones:
 
 Tener cuatro (4) clases:
 
-  - La clase que Permite validar la entrada al cajero (Login)
-  - La clase del cajero Automático (CajeroAutomatico)
-  - La clase de la Cuenta de Banco (CuentaBancaria)
-  - La clase Principal desde donde se ejecuta el programa
-    (Main)
+  - La clase que Permite validar la entrada al cajero (Login).
+  - La clase del cajero Automático (CajeroAutomatico).
+  - La clase de la Cuenta de Banco (CuentaBancaria).
+  - La clase Principal desde donde se ejecuta el programa (Main).
 
-  Utilizar métodos, funciones, **matrices** y encapsulación de
-  datos en las clases donde sea necesario. 
+  Utilizar:
 
+      Métodos. 
+      Funciones. 
+      Matrices.
+      Encapsulación de datos en las clases donde sea necesario. 
 
+# Hola, Adios...~
 
-# Hola, Adios.
+README:
 
 MAIN == Main.java
 LOGIN == Login.java
 CUENTA == Account.java
-
 CAJERO AUTOMATICO == ATMProcess.java
-
-///
-
-UTILIZAR:
-
-METODOS
-FUNCIONES
-MATRICES
-
-UTILIZAR:
-
-Encapsulamiento
-
-
