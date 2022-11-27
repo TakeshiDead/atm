@@ -2,7 +2,7 @@
 
 # Realizar un Cajero automático (ATM). 
 
-Que realice las siguientes funciones:
+## Que realice las siguientes funciones:
 
      Solicitar clave de acceso.
 
@@ -15,14 +15,14 @@ Que realice las siguientes funciones:
          Transferencias.
          Salir del sistema. 
 
-Tener cuatro (4) clases:
+## Tener cuatro (4) clases:
 
   - La clase que Permite validar la entrada al cajero (Login).
   - La clase del cajero Automático (CajeroAutomatico).
   - La clase de la Cuenta de Banco (CuentaBancaria).
   - La clase Principal desde donde se ejecuta el programa (Main).
 
-  Utilizar:
+##   Utilizar:
 
 * Métodos. 
 * Funciones.  
