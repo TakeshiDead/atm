@@ -1,4 +1,4 @@
-P á g i n a | 1
+****P á g i n a | 1****
 
 #Realizar un Cajero automático (ATM). 
 
@@ -24,16 +24,9 @@ Tener cuatro (4) clases:
 
   Utilizar:
 
-      Métodos. 
-      Funciones. 
-      Matrices.
-      Encapsulación de datos en las clases donde sea necesario. 
+* Métodos. 
+* Funciones.  
+* Matrices.
+* Encapsulación de datos en las clases donde sea necesario. 
 
 # Hola, Adios...~
-
-README:
-
-MAIN == Main.java
-LOGIN == Login.java
-CUENTA == Account.java
-CAJERO AUTOMATICO == ATMProcess.java

@@ -2,7 +2,6 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 public class Main {
     public static List<Account> cuentas = new ArrayList<>();
     public static void main(String arg[]){
@@ -13,7 +12,7 @@ public class Main {
         Vistas vs = new Vistas();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the BEST ATM    ////*************\n");
+        System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the RIVEG ATM    ////*************\n");
         System.out.println("                ***Seleccione una opcion***\n");
         System.out.print("---------------------------------------------------------------\n");
         System.out.println("|                                                             |");
@@ -26,7 +25,7 @@ public class Main {
 
         switch (option){
             case 1:
-                vs.viewLogin();
+                vs.ViewLogin();
                 break;
             case 2:
                 vs.ViewRegister();
