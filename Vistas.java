@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Vistas {
     Scanner sc = new Scanner(System.in);
+    ATMProcess atmProcess = new ATMProcess();
     public  void ViewLogin(){
 
         int pin;
@@ -121,7 +122,7 @@ public class Vistas {
     }
     public void ViewBalance(Account cuenta){
         System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the RIVEG ATM    ////*************\n");
-        System.out.println("     ***Bienvenido "+cuenta.getName()+", esta es su cuenta.***\n");
+        System.out.println("        ***Bienvenido "+cuenta.getName()+", esta es su cuenta.***\n");
         System.out.println("                 Recuerda tu PIN:  ("+cuenta.getPin()+").");
         System.out.print("---------------------------------------------------------------\n");
         System.out.println("|                                                             |");
@@ -151,7 +152,7 @@ public class Vistas {
     }
     public void ViewDeposit(Account cuenta){
         System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the RIVEG ATM    ////*************\n");
-        System.out.println("     ***Bienvenido "+cuenta.getName()+", esta es su cuenta.***\n");
+        System.out.println("         ***Bienvenido "+cuenta.getName()+", esta es su cuenta.***\n");
         System.out.println("                 Recuerda tu PIN:  ("+cuenta.getPin()+").");
         System.out.print("---------------------------------------------------------------\n");
         System.out.println("|                                                             |");
@@ -162,7 +163,10 @@ public class Vistas {
         System.out.println("---------------------------------------------------------------\n");
         System.out.print("Deposito de: $");
 
-        int deposioto = sc.nextInt();
+        int deposito = sc.nextInt();
+        atmProcess.deposit(cuenta, deposito);
+        System.out.println("Depósito exitoso. Usted ha depósitado: $"+deposito+" DOP, haciendo un total de: DOP $"
+                +cuenta.getBalance()+" vuelva pronto "+cuenta.getName()+".");
     }
     public void ViewWithdraw(Account cuenta){
         System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the RIVEG ATM    ////*************\n");
@@ -176,29 +180,80 @@ public class Vistas {
         System.out.println("|                                                             |");
         System.out.println("---------------------------------------------------------------\n");
         System.out.print("Retiro de: $");
-
         int retiro = sc.nextInt();
+
+        boolean retired = atmProcess.withdraw(cuenta, retiro);
+
+        if(retired){
+            System.out.print("Retiro exitoso. Usted ha retirado: $"+retiro+" DOP, haciendo un total de: DOP $"
+                    +cuenta.getBalance()+", vuelva pronto "
+                    +cuenta.getName()+".");
+        }else{
+            System.out.print("Retiro fallido, no cuenta con saldo suficiente.");
+        }
     }
     public void ViewTransfer(Account cuenta){
         System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the RIVEG ATM    ////*************\n");
         System.out.println("     ***Bienvenido "+cuenta.getName()+", esta es su cuenta.***\n");
-        System.out.println("                 Recuerda tu PIN:  ("+cuenta.getPin()+").");
         System.out.print("---------------------------------------------------------------\n");
         System.out.println("|                                                             |");
         System.out.println("|   Su saldo es: DOP $"+cuenta.getBalance()+"."+"             |");
         System.out.println("|                                                             |");
-        System.out.println("|   Nombre y cantidad a transferir                            |");
-        System.out.println("|                                                             |");
-        System.out.println("---------------------------------------------------------------\n");
-        System.out.print("Digite el nombre: ");
+        System.out.print("---------------------------------------------------------------\n");
 
-        String account = sc.nextLine();
+        if(Main.cuentas.size()==1){
+            System.out.print("---------------------------------------------------------------");
+            System.out.println("|             No tienes beneficiarios inscritos               |");
+            System.out.println("|                                                             |");
+            System.out.println("|            Espere 3 Segundos para volver al menú.           |");
+            System.out.println("---------------------------------------------------------------\n");
 
-        System.out.print("Cantidad de la transferencia: DOP $ ");
-        int transfer = sc.nextInt();
+            try {
+                //Ponemos a "Dormir" el programa durante los ms que queremos
+                Thread.sleep(5*1000);
+            }
+            catch (Exception e) {
+            }
+            ViewAccount(cuenta);
 
-        //System.out.print("Transferencia exitosa. Usted ha transferido: $"+transfer+" DOP.  A:"+NOMBRE DE AQUIEN LO MANDO+".");
+        }else{
+            System.out.println("Beneficiarios Inscritos: \n");
+            for(int i = 1; i <= Main.cuentas.size(); i++){
+                String name = Main.cuentas.get(i-1).getName();
 
-        System.out.print("No puede transferir mas dinero del que posee en su cuenta.");
+                if (!name.equals(cuenta.getName())){
+                    System.out.println(i+") "+name);
+                }
+            }
+            System.out.print("\nDigite el numero de la persona: ");
+
+            int option = sc.nextInt();
+
+            if(option > Main.cuentas.size()){
+                System.out.println("Esta opcion no es valida.");
+                ViewTransfer(cuenta);
+            }else{
+                System.out.println("\n\n\n\n*************\\\\\\\\   Welcome to the RIVEG ATM    ////*************\n");
+                System.out.println("     ***Bienvenido "+cuenta.getName()+", esta es su cuenta.***\n");
+                System.out.println("---------------------------------------------------------------");
+                System.out.println("|                                                             |");
+                System.out.println("|   Cantidad a transferir.                                    |");
+                System.out.println("|                                                             |");
+                System.out.println("---------------------------------------------------------------\n");
+                System.out.print("Digite la cantidad: ");
+
+                int transferCant = sc.nextInt();
+                Account cuentaDestino = Main.cuentas.get(option-1);
+
+                boolean transferSuccess = atmProcess.transfer(cuenta, cuentaDestino, transferCant);
+
+                if(transferSuccess){
+                    System.out.println("Transferencia exitosa. Usted ha transferido: $"+transferCant
+                            +" DOP, a "+cuentaDestino.getName()+".");
+                }else{
+                    System.out.println("Transferencia fallida, no cuenta con saldo suficiente.");
+                }
+            }
+        }
     }
 }
