@@ -31,7 +31,11 @@ public class Main {
                 vs.ViewRegister();
                 break;
             default:
+<<<<<<< HEAD
                 System.out.print("vamo a ve");
+=======
+                System.out.print("Esta opcion no es valida, digite nuevamente.");
+>>>>>>> f154b9ec811033d611f63204c28cd5139b081a3c
         }
         if(continuar){
             main(arg);
